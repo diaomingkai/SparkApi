@@ -87,14 +87,6 @@ public class Global {
     }
 
     /**
-     * 是否是演示模式，演示模式下不能修改用户、角色、密码、菜单、授权
-     */
-    public static Boolean isDemoMode() {
-        String dm = getConfig("demoMode");
-        return "true".equals(dm) || "1".equals(dm);
-    }
-
-    /**
      * 页面获取常量
      *
      * @see ${fns:getConst('YES')}
