@@ -25,7 +25,7 @@ public class Main {
         get("/erpsearch/:type", (req, res) -> {
 
             ISearch iSearch = (ISearch) Class.forName("wy.erp.service."+req.params("type")).newInstance();
-
+//123
             return  JSONObject.toJSON(iSearch.search());
 
         });
