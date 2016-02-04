@@ -25,5 +25,4 @@ public class StockDayService implements ISearch {
         return list;
     }
 
-
 }

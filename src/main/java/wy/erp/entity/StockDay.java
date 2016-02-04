@@ -5,6 +5,7 @@ package wy.erp.entity;
  * 采购日报相关
  */
 public class StockDay {
+    private String code, name, specs, unit, brandname, guserdef1, guserdef2, guserdef3, guserdef4, guserdef5, quantity, num1, num2, num3, goodsamt, taxamt, amount, lc_goodsamt, lc_taxamt, lc_amount, id;
     public String getCode() {
         return code;
     }
@@ -173,25 +174,5 @@ public class StockDay {
         this.id = id;
     }
 
-    private String code;
-    private String name;
-    private String specs;
-    private String unit;
-    private String brandname;
-    private String guserdef1;
-    private String guserdef2;
-    private String guserdef3;
-    private String guserdef4;
-    private String guserdef5;
-    private String quantity;
-    private String num1;
-    private String num2;
-    private String num3;
-    private String goodsamt;
-    private String taxamt;
-    private String amount;
-    private String lc_goodsamt;
-    private String lc_taxamt;
-    private String lc_amount;
-    private String id;
+
 }

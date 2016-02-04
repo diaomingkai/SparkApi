@@ -22,12 +22,29 @@ public class Main {
         /**
          * 调用查询接口
          */
-        get("/erpsearch/:type", (req, res) -> {
+        get("/erpsearch/:type", (request, response) -> {
 
-            ISearch iSearch = (ISearch) Class.forName("wy.erp.service."+req.params("type")).newInstance();
+            ISearch iSearch = (ISearch) Class.forName("wy.erp.service." + request.params("type")).newInstance();
 
-            return  JSONObject.toJSON(iSearch.search());
+            return JSONObject.toJSON(iSearch.search());
 
+        });
+        /**
+         * 请求前
+         */
+        before((request, response) -> {
+            boolean authenticated = false;
+            // ... check if authenticated
+            if (!authenticated) {
+                halt(401, request.session().id()+"不欢迎当前会话！");
+            }
+        });
+
+        /**
+         * 请求后
+         */
+        after((request, response) -> {
+            response.header("foo", "set by after filter");
         });
 
     }
